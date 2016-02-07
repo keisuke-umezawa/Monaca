@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="components/loader.js"></script>
+<link rel="stylesheet" href="components/loader.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script>
+</script>
+<style>
+body{
+background: #aadeff; <!-- 背景色は薄いブルー -->
+font-family: Roboto, sans-serif;  <!-- font-family で Android 用に Roboto と iOS 用に sans-serif -->
+font-weight: bold;
+margin: 120px auto;
+text-align: center;
+}
+.result{
+margin-bottom: 200px;
+font-size: 90px;
+color: #8FE7FF; //色を変更
+}
+.highlight{
+color: white;
+
+}
+.btn{
+margin: 0 auto 20px; <!-- margin を下に 20px -->
+padding: 14px; <!-- 隙間を 14px -->
+border-radius: 4px; <!-- border-radius で少し角丸 -->
+background: #0af; <!-- 濃いめのブルー -->
+width: 180px;
+color: white;
+font-size: 24px;
+}
+</style>
+</head>
+<body>
+<br />
+<div class="result">
+<i class="fa fa-smile-o highlight"></i>
+<i class="fa fa-smile-o"></i>
+<i class="fa fa-smile-o"></i>
+</div>
+<div class="btn">Wake Up!!
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+var onDeviceReady = function(){
+$(".btn").on("click",function(){
+    //今の時間を取得
+    //var hour = (new Date()).getHours();
+    var hour = 7;//検証用
+console.log(hour);
+
+//条件分岐
+//スマイルマークをハイライト
+if(hour < 12) $(".fa:nth-child(1)").addClass("highlight");
+if(hour < 9) $(".fa:nth-child(2)").addClass("highlight");
+if(hour < 7) $(".fa:nth-child(3)").addClass("highlight");
+
+
+});
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+</script>
+</body>
+</html>
